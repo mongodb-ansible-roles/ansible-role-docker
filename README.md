@@ -11,18 +11,6 @@ Requirements
 
 None
 
-Role Variables
---------------
-
-| Name | Description | Type | Default | Required |
-|------|-------------|:----:|:-------:|:--------:|
-| name | desc | type | default | required |
-
-Dependencies
-------------
-
-None
-
 Example Playbook
 ----------------
 

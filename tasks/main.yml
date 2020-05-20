@@ -1,1 +1,17 @@
 ---
+- name: Add Docker repository
+  yum_repository:
+    name: docker
+    description: Docker Community Edition
+    baseurl: https://download.docker.com/linux/centos/7/$basearch/stable
+    gpgcheck: true
+    gpgkey: https://download.docker.com/linux/centos/gpg
+
+- name: Install yum packages
+  yum:
+    name: "{{ item }}"
+    state: present
+  loop:
+    - containerd.io
+    - docker-ce
+    - docker-ce-cli

@@ -1,15 +1,27 @@
 ---
 - gather_facts: false
-  name: Setup RHEL6
-  hosts: rhel6
+  name: Setup RHEL7
+  hosts: rhel7
   tasks:
-    - name: Subscribe container
-      redhat_subscription:
-        auto_attach: true
-        force_register: true
-        password: "{{ lookup('env','REDHAT_REGISTRY_SERVICE_ACCOUNT_PASSWORD') }}"
-        username: "{{ lookup('env','REDHAT_REGISTRY_SERVICE_ACCOUNT_USERNAME') }}"
-
+    - name: Add Artifactory repos
+      yum_repository:
+        baseurl: "{{ item.baseurl }}"
+        description: "{{ item.description }}"
+        gpgcheck: "{{ item.gpgcheck }}"
+        name: "{{ item.name }}"
+      loop:
+        - baseurl: "https://{{ lookup('env', 'ARTIFACTORY_USERNAME') }}:{{ lookup('env', 'ARTIFACTORY_PASSWORD') }}@artifactory.corp.mongodb.com/artifactory/rpm/7.8.2003/updates/x86_64"  # noqa 204
+          description: Artifactory RHEL 7 Updates Packages
+          gpgcheck: false
+          name: rhel7updates
+        - baseurl: "https://{{ lookup('env', 'ARTIFACTORY_USERNAME') }}:{{ lookup('env', 'ARTIFACTORY_PASSWORD') }}@artifactory.corp.mongodb.com/artifactory/rpm/7.8.2003/os/x86_64"  # noqa 204
+          description: Artifactory RHEL 7 OS Packages
+          gpgcheck: false
+          name: rhel7os
+        - baseurl: "https://{{ lookup('env', 'ARTIFACTORY_USERNAME') }}:{{ lookup('env', 'ARTIFACTORY_PASSWORD') }}@artifactory.corp.mongodb.com/artifactory/rpm/7.8.2003/extras/x86_64"  # noqa 204
+          description: Artifactory RHEL 7 Extra Packages
+          gpgcheck: false
+          name: rhel7extras
     - name: Install packages
       yum:
         name:

@@ -7,5 +7,6 @@ testinfra_hosts = testinfra.utils.ansible_runner.AnsibleRunner(
 ).get_hosts('all')
 
 
-def test_host(host):
-    assert host.file("/etc/hosts").exists
+def test_docker(host):
+    cmd = host.run("docker --version")
+    assert cmd.succeeded

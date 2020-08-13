@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/mongodb-ansible-roles/ansible-role-docker/compare/v1.0.0...v1.1.0) (2020-08-13)
+
+
+### Features
+
+* Add support for ubuntu2004 ([#2](https://github.com/mongodb-ansible-roles/ansible-role-docker/issues/2)) ([bbea78c](https://github.com/mongodb-ansible-roles/ansible-role-docker/commit/bbea78cf186adf4ee55a0629307dd1a9849ba4c0))
+
 # 1.0.0 (2020-05-21)
 
 

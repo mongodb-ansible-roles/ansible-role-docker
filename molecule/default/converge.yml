@@ -4,3 +4,5 @@
   hosts: all
   roles:
     - role: ansible-role-docker
+      vars:
+        docker_user: ubuntu

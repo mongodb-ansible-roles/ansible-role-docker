@@ -1,0 +1,14 @@
+---
+- name: Install Docker
+  apt:
+    name: docker.io
+    state: present
+
+- name: Create docker group
+  group:
+    name: docker
+
+- name: Put docker user into docker group
+  user:
+    name: "{{ docker_user }}"
+    groups: docker

@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/mongodb-ansible-roles/ansible-role-docker/compare/v1.1.0...v1.2.0) (2021-01-26)
+
+
+### Features
+
+* Download Docker from source ([#3](https://github.com/mongodb-ansible-roles/ansible-role-docker/issues/3)) ([6c8451e](https://github.com/mongodb-ansible-roles/ansible-role-docker/commit/6c8451e68b6787462e9a4e6d372ce7251674fda9))
+
 # [1.1.0](https://github.com/mongodb-ansible-roles/ansible-role-docker/compare/v1.0.0...v1.1.0) (2020-08-13)
 
 

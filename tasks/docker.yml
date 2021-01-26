@@ -1,0 +1,26 @@
+---
+- name: Download docker tar file
+  get_url:
+    url: "{{ docker_download_url }}"
+    dest: /tmp/docker.tgz
+    mode: 0644
+
+- name: Download and untar docker directory
+  unarchive:
+    src: "{{ docker_download_url }}"
+    dest: /tmp
+    remote_src: true
+
+- name: Move docker binaries to bin
+  shell: mv /tmp/docker/* /usr/bin/
+  args:
+    creates: /usr/bin/docker
+
+- name: Create docker group
+  group:
+    name: docker
+
+- name: Put docker user into docker group
+  user:
+    name: "{{ docker_user }}"
+    groups: docker

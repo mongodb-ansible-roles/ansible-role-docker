@@ -7,7 +7,7 @@
       raw: apt-get update -y
       changed_when: false
     - name: Raw install packages
-      raw: apt-get install python3 sudo -y
+      raw: apt-get install python3 python3-pip sudo -y
       changed_when: false
     - name: Create ubuntu group
       group:
@@ -16,3 +16,6 @@
       user:
         name: ubuntu
         group: ubuntu
+    - name: Install certifi
+      pip:
+        name: certifi

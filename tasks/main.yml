@@ -1,6 +1,9 @@
 ---
-- name: Include ubuntu2004 tasks
-  include_tasks: setup-ubuntu2004.yml
-  when:
-    - ansible_distribution == "Ubuntu"
-    - ansible_distribution_version is version("20.04", "==")
+- name: Check if Docker binary is installed
+  stat:
+    path: /usr/bin/docker
+  register: docker
+
+- name: Install docker
+  include_tasks: docker.yml
+  when: not docker.stat.exists

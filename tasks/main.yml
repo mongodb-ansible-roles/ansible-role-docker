@@ -7,3 +7,7 @@
 - name: Install docker
   include_tasks: docker.yml
   when: not docker.stat.exists
+
+- name: Set up systemd for Docker
+  include_tasks: systemd.yml
+  when: ansible_service_mgr == "systemd"

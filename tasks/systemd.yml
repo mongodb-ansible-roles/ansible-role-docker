@@ -13,4 +13,5 @@
   systemd:
     name: docker
     daemon_reload: true
+    enabled: true
     state: restarted

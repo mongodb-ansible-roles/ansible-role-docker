@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/mongodb-ansible-roles/ansible-role-docker/compare/v1.2.0...v1.3.0) (2021-01-28)
+
+
+### Features
+
+* Configure SystemD ([#4](https://github.com/mongodb-ansible-roles/ansible-role-docker/issues/4)) ([18093a9](https://github.com/mongodb-ansible-roles/ansible-role-docker/commit/18093a9f42fee285d906f88823f663c22c271929))
+
 # [1.2.0](https://github.com/mongodb-ansible-roles/ansible-role-docker/compare/v1.1.0...v1.2.0) (2021-01-26)
 
 

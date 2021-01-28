@@ -1,0 +1,20 @@
+---
+- name: Copy systemd files
+  template:
+    src: "{{ item.src }}"
+    dest: "{{ item.dest }}"
+    mode: 0644
+    owner: root
+    group: root
+  loop:
+    - src: docker.socket.j2
+      dest: /etc/systemd/system/docker.socket
+    - src: docker.service.j2
+      dest: /etc/systemd/system/docker.service
+
+- name: Start docker daemon
+  systemd:
+    name: docker
+    daemon_reload: true
+    enabled: true
+    state: restarted

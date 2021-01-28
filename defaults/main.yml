@@ -2,5 +2,6 @@
 docker_architecture: x86_64
 docker_distro: linux
 docker_download_url: https://download.docker.com/{{ docker_distro }}/static/stable/{{ docker_architecture }}/docker-{{ docker_version }}.tgz
+docker_state_directory: /var/lib/docker
 docker_user: docker
 docker_version: 20.10.2

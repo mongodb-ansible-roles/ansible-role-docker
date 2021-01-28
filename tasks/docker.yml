@@ -24,3 +24,20 @@
   user:
     name: "{{ docker_user }}"
     groups: docker
+
+- name: Create etc docker directory
+  file:
+    path: /etc/docker
+    state: directory
+    owner: root
+    group: root
+    mode: 0755
+
+- name: Update Docker persistent state directory
+  copy:
+    content: |-
+      {
+        "graph": "/data/var/lib/docker"
+      }
+    dest: /etc/docker/daemon.json
+    mode: "0644"

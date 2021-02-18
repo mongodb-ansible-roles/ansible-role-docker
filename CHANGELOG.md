@@ -1,3 +1,10 @@
+## [1.3.1](https://github.com/mongodb-ansible-roles/ansible-role-docker/compare/v1.3.0...v1.3.1) (2021-02-18)
+
+
+### Bug Fixes
+
+* graph is deprecated on Docker 17.05 ([#5](https://github.com/mongodb-ansible-roles/ansible-role-docker/issues/5)) ([195857d](https://github.com/mongodb-ansible-roles/ansible-role-docker/commit/195857da46ef6bd2c7b27ab158c70b53f99b83b6))
+
 # [1.3.0](https://github.com/mongodb-ansible-roles/ansible-role-docker/compare/v1.2.0...v1.3.0) (2021-01-28)
 
 

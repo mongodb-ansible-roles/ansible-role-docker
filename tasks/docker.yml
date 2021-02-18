@@ -37,7 +37,7 @@
   copy:
     content: |-
       {
-        "graph": "/data/var/lib/docker"
+        "data-root": "/data/var/lib/docker"
       }
     dest: /etc/docker/daemon.json
     mode: "0644"

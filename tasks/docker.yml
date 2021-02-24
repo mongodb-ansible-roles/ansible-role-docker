@@ -41,3 +41,8 @@
       }
     dest: /etc/docker/daemon.json
     mode: "0644"
+
+- name: Delete temp Docker tar file
+  file:
+    path: /tmp/docker.tgz
+    state: absent

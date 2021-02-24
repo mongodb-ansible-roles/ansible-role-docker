@@ -1,3 +1,10 @@
+# [1.4.0](https://github.com/mongodb-ansible-roles/ansible-role-docker/compare/v1.3.1...v1.4.0) (2021-02-24)
+
+
+### Features
+
+* Check version of Docker before install ([#6](https://github.com/mongodb-ansible-roles/ansible-role-docker/issues/6)) ([e165110](https://github.com/mongodb-ansible-roles/ansible-role-docker/commit/e165110601fbeace1de1aa0e7ce12115ad4c551e))
+
 ## [1.3.1](https://github.com/mongodb-ansible-roles/ansible-role-docker/compare/v1.3.0...v1.3.1) (2021-02-18)
 
 

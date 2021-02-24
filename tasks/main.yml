@@ -4,9 +4,15 @@
     path: /usr/bin/docker
   register: docker
 
+- name: Check if Docker binary is correct version
+  shell: /usr/bin/docker --version | awk '{print $3}' | sed 's/,//'
+  changed_when: false
+  register: version
+  when: docker.stat.exists
+
 - name: Install docker
   include_tasks: docker.yml
-  when: not docker.stat.exists
+  when: not docker.stat.exists or (version is defined and version.stdout != "{{ docker_version }}")
 
 - name: Set up systemd for Docker
   include_tasks: systemd.yml

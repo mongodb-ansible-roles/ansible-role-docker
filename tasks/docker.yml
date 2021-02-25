@@ -1,4 +1,9 @@
 ---
+- name: Delete old docker binary
+  file:
+    path: /usr/bin/docker
+    state: absent
+
 - name: Download docker tar file
   get_url:
     url: "{{ docker_download_url }}"

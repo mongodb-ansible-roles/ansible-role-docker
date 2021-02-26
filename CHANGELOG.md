@@ -1,3 +1,10 @@
+## [1.4.2](https://github.com/mongodb-ansible-roles/ansible-role-docker/compare/v1.4.1...v1.4.2) (2021-02-26)
+
+
+### Bug Fixes
+
+* Delete the old docker binary when updating ([#8](https://github.com/mongodb-ansible-roles/ansible-role-docker/issues/8)) ([85bbf14](https://github.com/mongodb-ansible-roles/ansible-role-docker/commit/85bbf1441ae8e87a9f866e6bd4f89a8e2179e696))
+
 ## [1.4.1](https://github.com/mongodb-ansible-roles/ansible-role-docker/compare/v1.4.0...v1.4.1) (2021-02-24)
 
 

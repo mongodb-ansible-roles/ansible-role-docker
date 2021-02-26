@@ -18,8 +18,7 @@
 
 - name: Move docker binaries to bin
   shell: mv /tmp/docker/* /usr/bin/
-  args:
-    creates: /usr/bin/docker
+  changed_when: false
 
 - name: Create docker group
   group:
